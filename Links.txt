@@ -1,0 +1,14 @@
+Site de sprites - https://www.kenney.nl/assets
+
+Rodar em android - https://www.youtube.com/watch?v=iCXwaehzRFQ
+Animação top-down - https://www.youtube.com/watch?v=P8GF_clL1Y0&embeds_euri=https%3A%2F%2Fwww.crieseusjogos.com.br%2F&feature=emb_imp_woyt
+Movimentação com Joystick - https://www.youtube.com/watch?v=QEI7RDPaLPk
+Movimentação Inimigo - https://www.youtube.com/watch?v=2SXa10ILJms
+Checklist rodar Android - https://www.youtube.com/watch?v=L6CkG2sgupA
+Criando tilemaps - https://www.youtube.com/watch?v=DTp5zi8_u1U
+Arrumar renderização do tilemap - https://artemdemo.com/blog/20210128-vertical-lines-between-tiles/
+Adicionar HealthBar - https://www.youtube.com/watch?v=BLfNP4Sc_iA
+Sprite HealthBar - https://www.youtube.com/watch?v=Gtw7VyuMdDc
+
+
+Sprites edit on Piskel - https://www.youtube.com/watch?v=bZcxxA2OxwU&list=PLW-9djkTMdfXa2O7-oYF01o6d8VF-QHL-
