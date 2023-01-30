@@ -7,13 +7,13 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int health = 100;
     [SerializeField] private SpriteSlider spriteSlider;
+    [SerializeField] private GameObject healthBar;
     [SerializeField] private Slider slider;
 
     private int MAX_HEALTH = 100;
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         //if (Input.GetKeyDown(KeyCode.D)) { Damage(10); }
         //if (Input.GetKeyDown(KeyCode.H)) { Heal(10); }
     }
@@ -31,6 +31,8 @@ public class Health : MonoBehaviour
             spriteSlider.Max = maxHealth;
             spriteSlider.Value = currentHealth;
         }
+        UpdateSlider();
+        Debug.Log("Slider should have been updated");
     }
 
     public void Damage(int amount)
@@ -58,6 +60,7 @@ public class Health : MonoBehaviour
     {
         if (slider != null) slider.value = health;
         if (spriteSlider != null) spriteSlider.ValueChanged(health);
+        if (healthBar != null) healthBar.SetActive(health != MAX_HEALTH);
     }
 
 
@@ -71,7 +74,7 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("I am Dead!");
+        //Debug.Log("I am Dead!");
         Destroy(gameObject);
     }
 }

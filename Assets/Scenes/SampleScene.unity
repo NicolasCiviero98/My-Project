@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &28368595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5929216814015779778, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
+  m_PrefabInstance: {fileID: 1402793599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &190276177
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +334,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -402,6 +408,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8049b1a3fdbc94e4e8053b23864e23f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAt: {fileID: 599535834}
+  speed: 1
 --- !u!1 &599535829
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   spriteSlider: {fileID: 0}
+  healthBar: {fileID: 0}
   slider: {fileID: 1353588153}
 --- !u!114 &599535832
 MonoBehaviour:
@@ -880,13 +901,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4441663355715262147, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 28368595}
+    - target: {fileID: 5929216814015779778, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929216814015779778, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5929216815306690573, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5929216815306690573, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.03
+      value: 8.85
       objectReference: {fileID: 0}
     - target: {fileID: 5929216815306690573, guid: 8f37586437a9f2a478feea7167240e95, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9760,7 +9793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &2108146687
 Grid:
   m_ObjectHideFlags: 0

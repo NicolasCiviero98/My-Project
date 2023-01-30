@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   spriteSlider: {fileID: 3850504130633094527}
+  healthBar: {fileID: 3850504130633094497}
   slider: {fileID: 0}
 --- !u!50 &6965090930551813201
 Rigidbody2D:
@@ -228,12 +229,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3027074812922607553, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
   m_PrefabInstance: {fileID: 2264723036148589217}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3850504130633094497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3027074812922607552, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
+  m_PrefabInstance: {fileID: 2264723036148589217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3850504130633094527 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3027074812922607582, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
   m_PrefabInstance: {fileID: 2264723036148589217}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3850504130633094497}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd13e2c066c2db848a71447a144473a2, type: 3}

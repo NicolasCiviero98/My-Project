@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   spriteSlider: {fileID: 5929216814015779804}
+  healthBar: {fileID: 5929216814015779778}
   slider: {fileID: 0}
 --- !u!50 &1142219667422476454
 Rigidbody2D:
@@ -223,6 +224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
+--- !u!1 &5929216814015779778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3027074812922607552, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
+  m_PrefabInstance: {fileID: 8667911708597527554}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5929216814015779779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3027074812922607553, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
@@ -233,7 +239,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3027074812922607582, guid: 48c6196083a818849a2cdb4940e9ef33, type: 3}
   m_PrefabInstance: {fileID: 8667911708597527554}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5929216814015779778}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd13e2c066c2db848a71447a144473a2, type: 3}
