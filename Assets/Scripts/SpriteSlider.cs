@@ -25,9 +25,6 @@ public class SpriteSlider : MonoBehaviour
     {
         Value = value;
         var scale = (Value - Min) / (Max - Min);
-        Debug.Log($"{scale}");
         FillSprite.transform.localScale = new Vector3(scale, 1, 0);
-
-        //FillSprite.transform.localPosition = new Vector3(-(1 - scale) * GetComponent<SpriteRenderer>().bounds.size.x / 2, 0, 0);
     }
 }

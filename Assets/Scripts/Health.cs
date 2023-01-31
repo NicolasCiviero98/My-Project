@@ -23,16 +23,10 @@ public class Health : MonoBehaviour
         this.MAX_HEALTH = maxHealth;
         this.health = currentHealth;
 
-        if (slider != null) {
-            slider.maxValue = maxHealth;
-            slider.value = currentHealth;
-        }
-        if (spriteSlider != null) {
-            spriteSlider.Max = maxHealth;
-            spriteSlider.Value = currentHealth;
-        }
+        if (slider != null) slider.maxValue = maxHealth;
+        if (spriteSlider != null) spriteSlider.Max = maxHealth;
+        
         UpdateSlider();
-        Debug.Log("Slider should have been updated");
     }
 
     public void Damage(int amount)
@@ -75,6 +69,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         //Debug.Log("I am Dead!");
+        GetComponent<Enemy>().OnDeath();
         Destroy(gameObject);
     }
 }

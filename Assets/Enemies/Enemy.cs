@@ -40,4 +40,11 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+
+    public void OnDeath()
+    {
+        var ExpPrefab = (GameObject)Resources.Load("Exp", typeof(GameObject));
+        Instantiate(ExpPrefab, this.transform.position, Quaternion.identity);
+    }
+
 }
