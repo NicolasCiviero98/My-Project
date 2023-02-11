@@ -168,7 +168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 8789123085881662797}
   projectilePrefab: {fileID: 8536960572581875068, guid: c72bdff83035b9a4ab829dcb194e637a, type: 3}
-  projectileSpeed: 25
+  projectileCritPrefab: {fileID: 8536960572581875068, guid: 71ab4efb3f7c41442aae9fbbaab7d775, type: 3}
+  projectileSpeed: 15
+  criticalChance: 50.3
 --- !u!114 &8789123084959385395
 MonoBehaviour:
   m_ObjectHideFlags: 0

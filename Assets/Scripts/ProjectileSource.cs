@@ -6,7 +6,9 @@ public class ProjectileSource : MonoBehaviour
 {
     public Transform spawnPoint;
     public GameObject projectilePrefab;
+    public GameObject projectileCritPrefab;
     public float projectileSpeed = 15;
+    [Range(1, 100)] [SerializeField] public float criticalChance = 15;
 
     private GameObject target;
 
@@ -48,7 +50,8 @@ public class ProjectileSource : MonoBehaviour
             ? target.transform.position - spawnPoint.position
             : new Vector2(0,1);
 
-        var projectile = Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
+        var isCritical = Random.Range(0, 100) < criticalChance;
+        var projectile = Instantiate(isCritical ? projectileCritPrefab : projectilePrefab, spawnPoint.position, spawnPoint.rotation);
         projectile.transform.right = direction;
         projectile.GetComponent<Projectile>().Source = gameObject;
         projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * projectileSpeed;

@@ -38,7 +38,6 @@ public class Health : MonoBehaviour
 
         StartCoroutine(VisualIndicator(Color.red));
         UpdateSlider();
-        ShowDamagePopup(amount);
     }
     public void Heal(int amount)
     {
@@ -58,16 +57,6 @@ public class Health : MonoBehaviour
         if (healthBar != null) healthBar.SetActive(health != MAX_HEALTH);
     }
 
-    public void ShowDamagePopup(int damage)
-    {
-        var prefab = (GameObject)Resources.Load("DamagePopup", typeof(GameObject));
-        prefab.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
-
-        var position = this.transform.position;
-        position.y += GetComponent<BoxCollider2D>().size.y;
-
-        Instantiate(prefab, position, Quaternion.identity);
-    }
 
     private IEnumerator VisualIndicator(Color color)
     {
