@@ -46,9 +46,11 @@ public class ProjectileSource : MonoBehaviour
 
     private void Fire()
     {
-        Vector2 direction = target != null 
-            ? target.transform.position - spawnPoint.position
-            : new Vector2(0,1);
+        Vector2 direction = new Vector2(0,1);
+        if (target != null) {
+            direction = target.transform.position - spawnPoint.position;
+            direction.y += target.GetComponent<BoxCollider2D>().size.y / 2;
+        }
 
         var isCritical = Random.Range(0, 100) < criticalChance;
         var projectile = Instantiate(isCritical ? projectileCritPrefab : projectilePrefab, spawnPoint.position, spawnPoint.rotation);

@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
         }
 
         var position = collider.transform.position;
-        position.y += GetComponent<BoxCollider2D>().size.y;
+        position.y += collider.GetComponent<BoxCollider2D>().size.y;
 
         Instantiate(prefab, position, Quaternion.identity);
     }

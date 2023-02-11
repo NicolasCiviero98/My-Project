@@ -8,7 +8,6 @@ public class MapGenerator : MonoBehaviour
 {
     
     [SerializeField] private Tilemap tileMap;
-    [SerializeField] private Tilemap debugMap;
 
     //[SerializeField] private List<TileBase> tiles;
     [SerializeField] private List<TileBase> dirtVariations;
@@ -36,7 +35,6 @@ public class MapGenerator : MonoBehaviour
             for (int j = 1; j < size - 1; j++) {
                 var tile = ChooseTile(grassMap, i, j);
                 tileMap.SetTile(new Vector3Int(i-offset,j-offset,0), tile);
-                debugMap.SetTile(new Vector3Int(i-offset,j-offset,0), grassMap[i,j] ? grassVariations[0] : dirtVariations[0]);
             }
         }
         tileMap.gameObject.SetActive(true);
