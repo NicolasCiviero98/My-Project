@@ -60,10 +60,9 @@ public class Health : MonoBehaviour
 
     private IEnumerator VisualIndicator(Color color)
     {
-        var defaultColor = GetComponent<SpriteRenderer>().color;
         GetComponent<SpriteRenderer>().color = color;
         yield return new WaitForSeconds(0.15f);
-        GetComponent<SpriteRenderer>().color = defaultColor;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
     private void Die()
     {

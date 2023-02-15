@@ -16,7 +16,6 @@ public class EnemySpawner2 : MonoBehaviour
     [SerializeField] private int Rarity3;
     [SerializeField] private int Rarity4;
 
-    [SerializeField] private float spawnInterval = 2f;
     [SerializeField] private float spawnDistance = 18;
 
     private GameObject player;

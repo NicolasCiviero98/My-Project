@@ -5,11 +5,11 @@ using UnityEngine;
 public class ExperienceObject : MonoBehaviour
 {
     [SerializeField] private int expCount = 5;
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.collider.GetComponent<Level>() != null)
+        if (collider.GetComponent<Level>() != null)
         {
-            collision.collider.GetComponent<Level>().OnExperienceCollected(expCount);
+            collider.GetComponent<Level>().OnExperienceCollected(expCount);
             Destroy(gameObject);
         }
     }

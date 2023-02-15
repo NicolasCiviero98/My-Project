@@ -1,23 +1,43 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5636765165796352398
+--- !u!1001 &8852817256936292846
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2860182355151765174, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: ReceivingMultiplier
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Size.y
-      value: 1.25
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4cbaf3e481876ea4397c3554da6e6ee0, type: 3}
+      objectReference: {fileID: 21300000, guid: 2a05a0ee5540a81439b7c00bbe70b4c2, type: 3}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: hp
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: speed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: damage
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3453872852507591297, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_RootOrder
@@ -63,13 +83,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4226832488100563239, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4226832488100563239, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4341626
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8756484
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.034000635
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.9362429
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.25
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 8559031240507836291, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Name
-      value: BaseEnemy
+      value: DemonBoss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83d341f32ca08340bda6148189fb444, type: 3}

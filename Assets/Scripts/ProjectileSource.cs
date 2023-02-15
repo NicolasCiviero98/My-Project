@@ -4,53 +4,49 @@ using UnityEngine;
 
 public class ProjectileSource : MonoBehaviour
 {
-    public Transform spawnPoint;
-    public GameObject projectilePrefab;
-    public GameObject projectileCritPrefab;
-    public float projectileSpeed = 15;
-    [Range(1, 100)] [SerializeField] public float criticalChance = 15;
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private GameObject projectileCritPrefab;
+    [SerializeField] private float projectileSpeed;
+    [Range(1, 100)] [SerializeField] private float criticalChance;
 
-    private GameObject target;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            FindTarget();
-            Fire();
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            OnPanelClicked();
         }
     }
 
     public void OnPanelClicked()
     {
-        FindTarget();
-        Fire();
+        var target = FindTarget();
+        var direction = Aim(target);
+        Fire(direction);
     }
 
-    private void FindTarget()
-    {
+    private GameObject FindTarget() {
         GameObject[] allTargets = GameObject.FindGameObjectsWithTag("Enemy");
-        if (allTargets != null && allTargets.Length > 0)
-        {
-            target = allTargets[0];
-            //look for the closest
-            foreach (GameObject tmpTarget in allTargets)
-            {
-                if (Vector2.Distance(spawnPoint.position, tmpTarget.transform.position) < Vector2.Distance(spawnPoint.position, target.transform.position))
-                {
-                    target = tmpTarget;
-                }
+        if (allTargets == null || allTargets.Length == 0) return null;
+        var target = allTargets[0];
+        var minDist = Vector2.Distance(spawnPoint.position, target.transform.position);
+        foreach (GameObject tmpTarget in allTargets) {
+            var dist = Vector2.Distance(spawnPoint.position, tmpTarget.transform.position);
+            if (dist < minDist) {
+                target = tmpTarget;
+                minDist = dist;
             }
         }
+        return target;
     }
+    private Vector2 Aim(GameObject target) {
+        if (target == null) return GetComponent<Player>().movement;
 
-    private void Fire()
-    {
-        Vector2 direction = new Vector2(0,1);
-        if (target != null) {
-            direction = target.transform.position - spawnPoint.position;
-            direction.y += target.GetComponent<BoxCollider2D>().size.y / 2;
-        }
+        var direction = target.transform.position - spawnPoint.position;
+        direction.y += target.GetComponent<BoxCollider2D>().size.y / 2;
+        return direction;
+    }
+    private void Fire(Vector2 direction) {
 
         var isCritical = Random.Range(0, 100) < criticalChance;
         var projectile = Instantiate(isCritical ? projectileCritPrefab : projectilePrefab, spawnPoint.position, spawnPoint.rotation);

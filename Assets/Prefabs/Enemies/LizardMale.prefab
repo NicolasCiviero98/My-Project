@@ -1,23 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5636765165796352398
+--- !u!1001 &5976579441294362682
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
-      propertyPath: m_Size.y
-      value: 1.25
+    - target: {fileID: -2860182355151765174, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: ReceivingMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4cbaf3e481876ea4397c3554da6e6ee0, type: 3}
+      objectReference: {fileID: 21300000, guid: 150857df86348ee47a728f58227d0df3, type: 3}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: speed
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: damage
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3453872852507591297, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_RootOrder
@@ -64,12 +76,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 1.25
+      propertyPath: m_Size.y
+      value: 1.1999494
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5983934
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0.5625
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 8559031240507836291, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Name
-      value: BaseEnemy
+      value: LizardMale
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83d341f32ca08340bda6148189fb444, type: 3}
