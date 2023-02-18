@@ -29,7 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: hp
-      value: 80
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: power
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: speed
@@ -126,6 +130,18 @@ PrefabInstance:
     - target: {fileID: 8559031240507836291, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Name
       value: DemonBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132774456352933954, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132774456352933954, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9132774456352933954, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83d341f32ca08340bda6148189fb444, type: 3}

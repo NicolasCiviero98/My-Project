@@ -148,6 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Source: {fileID: 0}
   pierces: 0
-  damage: 5
+  damage: 25
   Critical: 1
   KnokbackForce: 1

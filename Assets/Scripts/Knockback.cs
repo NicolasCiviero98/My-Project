@@ -23,8 +23,8 @@ public class Knockback : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (this.gameObject.CompareTag("Enemy")) return;
         var other = collision.collider.gameObject;
+        if (this.gameObject.CompareTag("Enemy") && other.CompareTag("Enemy")) return;
         
         Vector3 direction = this.gameObject.transform.position - other.transform.position;
         PlayFeedback(other, direction);

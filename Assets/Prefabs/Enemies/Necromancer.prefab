@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: power
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3453872852507591297, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -64,12 +68,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8181293
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9434573
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.026581168
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.47014734
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 8559031240507836291, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Name
-      value: BaseEnemy
+      value: Necromancer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83d341f32ca08340bda6148189fb444, type: 3}

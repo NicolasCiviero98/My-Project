@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] private int damage;
     [SerializeField] public float speed;
+    [SerializeField] public int power; // used for: wave cost, score, experience calculation...
 
     private GameObject player;
     private Rigidbody2D body;
@@ -57,8 +58,9 @@ public class Enemy : MonoBehaviour
     }
 
     public void OnDeath() {
-        var ExpPrefab = (GameObject)Resources.Load("Exp", typeof(GameObject));
-        Instantiate(ExpPrefab, this.transform.position, Quaternion.identity);
+        var expPrefab = (GameObject)Resources.Load("Exp", typeof(GameObject));
+        expPrefab.GetComponent<ExperienceObject>().expCount = power;
+        Instantiate(expPrefab, this.transform.position, Quaternion.identity);
     }
 
     public void ApplyKnockback(Vector3 force, double milliseconds) {

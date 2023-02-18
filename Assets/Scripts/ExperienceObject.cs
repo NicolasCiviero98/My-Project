@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExperienceObject : MonoBehaviour
 {
-    [SerializeField] private int expCount = 5;
+    [SerializeField] public int expCount = 5;
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.GetComponent<Level>() != null)

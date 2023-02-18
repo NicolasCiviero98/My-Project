@@ -190,6 +190,7 @@ MonoBehaviour:
   hp: 14
   damage: 20
   speed: 2
+  power: 5
 --- !u!114 &5525473467715371170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +207,7 @@ MonoBehaviour:
   spriteSlider: {fileID: 9132774458138420109}
   healthBar: {fileID: 9132774458138420115}
   slider: {fileID: 0}
+  sliderText: {fileID: 0}
 --- !u!50 &5404805819626681266
 Rigidbody2D:
   serializedVersion: 4
@@ -219,7 +221,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 8
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -268,7 +270,7 @@ MonoBehaviour:
   body: {fileID: 5404805819626681266}
   ReceivingMultiplier: 1
   DealingMultiplier: 1
-  delay: 0.15
+  delay: 0.2
   OnBegin:
     m_PersistentCalls:
       m_Calls: []
