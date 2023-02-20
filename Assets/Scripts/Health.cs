@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class Health : MonoBehaviour
     [Header("From Canvas")]
     [SerializeField] private Slider slider;
     [SerializeField] private TextMeshProUGUI sliderText;
+
+    public static Action OnPlayerDeath;
+    public static Action OnEnemyDeath;
 
     private int MAX_HEALTH;
 
@@ -66,9 +70,16 @@ public class Health : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
     }
     private void Die() {
-        //Debug.Log("I am Dead!");
         GetComponent<Enemy>()?.OnDeath();
         Destroy(gameObject);
+
+        if (this.CompareTag("Player")){
+            Time.timeScale = 0;
+            OnPlayerDeath?.Invoke();
+        }
+        else{
+            OnEnemyDeath?.Invoke();
+        }
     }
 
 }

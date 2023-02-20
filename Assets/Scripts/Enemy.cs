@@ -13,8 +13,6 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D body;
-    private Vector3? _force;
-    private DateTime? _forceStop;
 
 
 
@@ -27,18 +25,7 @@ public class Enemy : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate() {
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.fixedDeltaTime);
-
-        if (_force != null) {
-            if (DateTime.Now > _forceStop) {
-                _force = null;
-                _forceStop = null;
-            }
-            else {
-                transform.position += (Vector3)_force * Time.fixedDeltaTime;
-            }
-        }
-
+        if (player != null) transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.fixedDeltaTime);
 
         //var movement = player.transform.position - this.transform.position;
         //body.velocity = movement.normalized * speed;
