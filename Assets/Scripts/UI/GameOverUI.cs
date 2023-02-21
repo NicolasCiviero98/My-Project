@@ -8,17 +8,12 @@ using TMPro;
 public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreValueText;
-    private int score = 0;
+    [SerializeField] private TextMeshProUGUI timeValueText;
 
     void Start() {
-        Health.OnPlayerDeath += ActivateGameObject;
-        Health.OnEnemyDeath += CountScore;
-        this.gameObject.SetActive(false);
     }
 
     private void OnDestroy() {
-        Health.OnPlayerDeath -= ActivateGameObject;
-        Health.OnEnemyDeath -= CountScore;
     }
     public void RestartGame() {
         SceneManager.LoadScene(1);
@@ -27,13 +22,9 @@ public class GameOverUI : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    private void CountScore() {
-        score++;
-    }
-
-    private void ActivateGameObject() {
-        Debug.Log("Activate GameOver Screen");
+    public void Activate() {
         this.gameObject.SetActive(true);
-        scoreValueText.text = score.ToString();
+        scoreValueText.text = GameController.Statistics.GetScore().ToString();
+        timeValueText.text = GameController.Statistics.GetSurvivedTimeText();
     }
 }

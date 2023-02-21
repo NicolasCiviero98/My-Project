@@ -56,7 +56,6 @@ public class Projectile : MonoBehaviour
         var enemy = collider.gameObject.GetComponent<Enemy>();
         if (body != null && enemy != null) {
             var direction = GetComponent<Rigidbody2D>().velocity.normalized;
-            enemy.ApplyKnockback(direction * 8, 80);
         }
     }
 

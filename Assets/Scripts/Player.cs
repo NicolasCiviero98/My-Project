@@ -26,10 +26,20 @@ public class Player : MonoBehaviour
         if (movement.x < -0.05) GetComponent<SpriteRenderer>().flipX = true;
     }
 
+    
+    public void OnDeath() {
+        Time.timeScale = 0;
+
+        //var prefab = (GameObject)Resources.Load("GameOverPanel", typeof(GameObject));
+        //Instantiate(prefab, this.transform.position, Quaternion.identity);
+        //prefab.GetComponent<GameOverUI>()?.Activate();
+    }
+
     private void FixedUpdate() {
         transform.position = transform.position + movement * speed * Time.fixedDeltaTime;
         //body.velocity = movement.normalized * speed;
     }
+
 
 
 }
