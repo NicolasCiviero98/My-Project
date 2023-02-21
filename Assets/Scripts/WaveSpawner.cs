@@ -18,7 +18,6 @@ public class WaveSpawner : MonoBehaviour
     private float spawnTimer;
  
  
-    public List<GameObject> spawnedEnemies = new List<GameObject>();
     private List<GameObject> enemiesToSpawn = new List<GameObject>();
     private GameObject player;
     
@@ -72,7 +71,6 @@ public class WaveSpawner : MonoBehaviour
 
         GameObject enemy = Instantiate(enemiesToSpawn[0], pos, Quaternion.identity);
         enemiesToSpawn.RemoveAt(0);
-        spawnedEnemies.Add(enemy);
         spawnTimer = spawnInterval;
     }
 }

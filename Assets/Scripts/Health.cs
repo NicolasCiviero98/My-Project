@@ -8,7 +8,6 @@ using TMPro;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int health;
     [Header("In Game")]
     [SerializeField] private SpriteSlider spriteSlider;
     [SerializeField] private GameObject healthBar;
@@ -18,6 +17,7 @@ public class Health : MonoBehaviour
     
     public UnityEvent OnDeath;
 
+    private int health;
     private int MAX_HEALTH;
 
     void Update() {

@@ -6,13 +6,19 @@ using UnityEngine.Events;
 public class Knockback : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D body;
-    [SerializeField] private float ReceivingMultiplier = 1f;
-    [SerializeField] private float DealingMultiplier = 1f;
-    [SerializeField] private float delay = 0.2f;
+    [Tooltip("Divisor for knockback received")]
+    [SerializeField] private float Weight = 1f;
+    [Tooltip("Multiplier for knockback dealt")]
+    [SerializeField] private float Strength = 1f;
 
     public UnityEvent OnBegin, OnDone;
     private const float defaultStrength = 2f;
+    private Entity entity;
+    private float delay = 0.5f;
 
+    void Start() {
+        entity = GetComponent<Entity>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collider) {
         var projectile = collider.GetComponent<Projectile>();
@@ -25,7 +31,7 @@ public class Knockback : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         var other = collision.collider.gameObject;
         if (this.gameObject.CompareTag("Enemy") && other.CompareTag("Enemy")) return;
-        
+
         Vector3 direction = this.gameObject.transform.position - other.transform.position;
         PlayFeedback(other, direction);
     }
@@ -35,22 +41,13 @@ public class Knockback : MonoBehaviour
         OnBegin?.Invoke();
 
         var senderKnockback = sender.GetComponent<Knockback>();
-        var dealerMultiplier = senderKnockback == null ? 1f : senderKnockback.DealingMultiplier;
-        var strength = 2 * GetSpeed() * ReceivingMultiplier * dealerMultiplier;
+        var dealerMultiplier = senderKnockback == null ? 1f : senderKnockback.Strength;
+        var strength = defaultStrength * entity.Speed * dealerMultiplier / Weight;
         
         body.velocity = Vector3.zero;
         body.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset());
     }
-
-    private float GetSpeed() {
-        var enemy = this.GetComponent<Enemy>();
-        if (enemy != null) return enemy.speed;
-        var player = this.GetComponent<Player>();
-        if (player != null) return player.speed;
-        return 1;
-    }
-
 
     private IEnumerator Reset() {
         yield return new WaitForSeconds(delay);

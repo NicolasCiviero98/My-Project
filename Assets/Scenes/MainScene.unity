@@ -328,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &507855053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -247838511
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &507855056
@@ -563,6 +563,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 247549695}
   timeText: {fileID: 139151335}
+  ActivateOnStart:
+  - {fileID: 507855052}
 --- !u!4 &729182908
 Transform:
   m_ObjectHideFlags: 0
@@ -1092,11 +1094,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4164450414794370620, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164450414794370620, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4164450415906589874, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_Pivot.x
@@ -1309,11 +1311,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8231147437191750959, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8231147437191750959, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
@@ -1342,11 +1344,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3919876889207042624, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3919876889207042624, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3919876890376933569, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_Name
@@ -2056,7 +2058,6 @@ MonoBehaviour:
   waveInterval: 30
   waveValueMultiplier: 30
   spawnDistance: 20
-  spawnedEnemies: []
 --- !u!114 &1851733952 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6530236334018263659, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
@@ -8533,6 +8534,10 @@ PrefabInstance:
       propertyPath: sliderText
       value: 
       objectReference: {fileID: 1851733952}
+    - target: {fileID: 8789123084959385404, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
+      propertyPath: Speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8789123084959385404, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
       propertyPath: speed
       value: 5

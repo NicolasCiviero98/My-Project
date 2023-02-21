@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Entity
 {
     [SerializeField] private int hp;
     [SerializeField] private int damage;
-    [SerializeField] public float speed;
     [SerializeField] public int power; // used for: wave cost, score, experience calculation...
 
     private GameObject player;
@@ -21,7 +20,7 @@ public class Enemy : MonoBehaviour
     }
 
     void FixedUpdate() {
-        if (player != null) transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.fixedDeltaTime);
+        if (player != null) transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, Speed * Time.fixedDeltaTime);
 
         //var movement = player.transform.position - this.transform.position;
         //body.velocity = movement.normalized * speed;

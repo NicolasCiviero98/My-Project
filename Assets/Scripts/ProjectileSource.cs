@@ -40,7 +40,7 @@ public class ProjectileSource : MonoBehaviour
         return target;
     }
     private Vector2 Aim(GameObject target) {
-        if (target == null) return GetComponent<Player>().movement;
+        if (target == null) return GetComponent<Player>().facing;
 
         var direction = target.transform.position - spawnPoint.position;
         direction.y += target.GetComponent<BoxCollider2D>().size.y / 2;

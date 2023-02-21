@@ -8,11 +8,15 @@ public class GameController : MonoBehaviour
     public static MatchStatistics Statistics;
     [SerializeField] private GameOverUI GameOverUI;
     [SerializeField] private TextMeshProUGUI timeText;
+    [SerializeField] private List<GameObject> ActivateOnStart;
 
 
     void Start() {
         Time.timeScale = 1;
         Statistics = new MatchStatistics();
+        foreach (var gameObject in ActivateOnStart) {
+            gameObject.SetActive(true);
+        }
     }
 
     void Update() {
