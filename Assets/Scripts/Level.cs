@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -9,6 +10,7 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     [SerializeField] private TextMeshProUGUI sliderText;
+    public UnityEvent OnLevelUp;
 
     private int _level;
     private int _experience;
@@ -17,19 +19,19 @@ public class Level : MonoBehaviour
     private int _experienceToLevelUp;
 
     void Start() {
-        UpdateUI();
         _experienceToLevelUp = _baseExperienceToLevelUp;
+        UpdateUI();
     }
 
     public void OnExperienceCollected(int exp) {
-        _experience += exp;
+        _experience += exp * 10;
         while (_experience >= _experienceToLevelUp) LevelUp();
         UpdateUI();
     }
 
     private void UpdateUI() {
-        slider.value = _experience;
         slider.maxValue = _experienceToLevelUp;
+        slider.value = _experience;
         sliderText.text = $"{_level}";
     }
 
@@ -39,6 +41,7 @@ public class Level : MonoBehaviour
         _experience = _experience - _experienceToLevelUp;
         _level++;
         _experienceToLevelUp = (int)(_baseExperienceToLevelUp * Math.Pow(1.2, _level));
+        OnLevelUp?.Invoke();
     }
 
 }

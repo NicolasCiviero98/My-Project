@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Enemy : Entity
 {
-    [SerializeField] private int hp;
-    [SerializeField] private int damage;
     [SerializeField] public int power; // used for: wave cost, score, experience calculation...
 
     private GameObject player;
@@ -16,7 +14,7 @@ public class Enemy : Entity
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         body = GetComponent<Rigidbody2D>();
-        GetComponent<Health>().SetHealth(hp, hp);
+        GetComponent<Health>().SetHealth(Health, Health);
     }
 
     void FixedUpdate() {
@@ -30,7 +28,7 @@ public class Enemy : Entity
         var collider = collision.collider;
         if (collider.CompareTag("Player")) {
             if (collider.GetComponent<Health>() != null) {
-                collider.GetComponent<Health>().Damage(damage);
+                collider.GetComponent<Health>().Damage(Damage);
             }
         }
     }

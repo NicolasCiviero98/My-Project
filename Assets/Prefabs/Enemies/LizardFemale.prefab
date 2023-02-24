@@ -27,6 +27,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 39df3a8263480a448965760047ae4a7a, type: 3}
+    - target: {fileID: 8877107705524445868, guid: 050a89f35dbc05347b257b2ad73ad542, type: 3}
+      propertyPath: Damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877107705524445868, guid: 050a89f35dbc05347b257b2ad73ad542, type: 3}
+      propertyPath: Health
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9016079294833904315, guid: 050a89f35dbc05347b257b2ad73ad542, type: 3}
       propertyPath: m_RootOrder
       value: 0

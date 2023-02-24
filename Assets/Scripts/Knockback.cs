@@ -21,8 +21,8 @@ public class Knockback : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        var projectile = collider.GetComponent<Projectile>();
-        if (projectile == null || projectile.Source == this.gameObject) return;
+        var damageSource = collider.GetComponent<DamageSource>();
+        if (damageSource == null || damageSource.Source == this.gameObject) return;
         
         Vector3 direction = collider.gameObject.GetComponent<Rigidbody2D>().velocity.normalized;
         PlayFeedback(collider.gameObject, direction);

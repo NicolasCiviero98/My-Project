@@ -10,6 +10,8 @@ Arrumar renderização do tilemap - https://artemdemo.com/blog/20210128-vertical
 Adicionar HealthBar - https://www.youtube.com/watch?v=BLfNP4Sc_iA
 Sprite HealthBar - https://www.youtube.com/watch?v=Gtw7VyuMdDc
 Wave generator - https://www.youtube.com/watch?v=7T-MTo8Uaio
+Knockback - https://www.youtube.com/watch?v=RXhTD8YZnY4
+Add gameover screen - https://www.youtube.com/watch?v=O3zZUKDUU88&list=PLKGarocXCE1H7pJk6k_CSwS359mtt3MVI&index=14
 
 
 Sprites edit on Piskel - https://www.youtube.com/watch?v=bZcxxA2OxwU&list=PLW-9djkTMdfXa2O7-oYF01o6d8VF-QHL-

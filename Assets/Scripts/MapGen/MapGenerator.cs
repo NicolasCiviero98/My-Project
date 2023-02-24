@@ -82,7 +82,6 @@ public class MapGenerator : MonoBehaviour
             if (TileSurrounded4Connected(grassMap, i, j) >= 3) return grassVariations[rdn.Next(0, grassVariations.Count)];
         }
 
-        Debug.Log(code8);
         return notHandledTile;
     }
 

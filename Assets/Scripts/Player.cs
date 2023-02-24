@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Player : Entity
 {
     public FloatingJoystick joystick;
-    public int health;
 
     private Rigidbody2D body;
     public Vector3 movement { get; private set; }
@@ -15,7 +14,7 @@ public class Player : Entity
     
     void Start() {
         body = GetComponent<Rigidbody2D>();
-        GetComponent<Health>().SetHealth(health, health);
+        GetComponent<Health>().SetHealth(Health, Health);
         facing = new Vector3(1,0,0);
     }
     
@@ -43,6 +42,8 @@ public class Player : Entity
         //body.velocity = movement.normalized * Speed;
     }
 
-
+    public void IncreseDamage() {
+        Damage += 2;
+    }
 
 }

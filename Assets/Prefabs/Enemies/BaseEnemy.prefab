@@ -188,8 +188,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.6
+  Damage: 0
+  Health: 14
   hp: 14
-  damage: 20
   power: 5
 --- !u!114 &5525473467715371170
 MonoBehaviour:
@@ -284,7 +285,6 @@ MonoBehaviour:
   body: {fileID: 5404805819626681266}
   Weight: 1
   Strength: 1
-  delay: 0.5
   OnBegin:
     m_PersistentCalls:
       m_Calls: []

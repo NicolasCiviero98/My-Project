@@ -25,11 +25,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: power
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: speed
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: Damage
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: Health
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3008617010078296726, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: damage

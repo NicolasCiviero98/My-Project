@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileSource : MonoBehaviour
+public class LightiningBolt : Skill
 {
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private GameObject projectileCritPrefab;
-    [SerializeField] private float projectileSpeed;
+    public float BaseDamage = 12;
+
+    public GameObject Bolt;
+    public GameObject Player;
+    public Transform spawnPoint;
+
+    private float[] _damageMultiplier = {0, 1, 1.4f, 1.4f, 1.8f, 1.8f, 2f, 2.3f};
+    private float[] _attackSpeedMultiplier = {0, 1, 1, 1.3f, 1.3f, 1.6f, 1.6f, 1.8f};
+
+    [SerializeField] private float projectileSpeed = 15;
     [Range(1, 100)] [SerializeField] private float criticalChance;
+    
+    public float DamageMultiplier => _damageMultiplier[Level];
+    public float AttackSpeedMultiplier => _attackSpeedMultiplier[Level];
+    
 
-    private Player player;
-    void Start() {
-        player = GetComponent<Player>();
-    }
-
-    void Update()
-    {
+    void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            //OnPanelClicked();
+            OnPanelClicked();
         }
     }
 
@@ -43,7 +47,7 @@ public class ProjectileSource : MonoBehaviour
         return target;
     }
     private Vector2 Aim(GameObject target) {
-        if (target == null) return GetComponent<Player>().facing;
+        if (target == null) return Player.GetComponent<Player>().facing;
 
         var direction = target.transform.position - spawnPoint.position;
         direction.y += target.GetComponent<BoxCollider2D>().size.y / 2;
@@ -52,12 +56,20 @@ public class ProjectileSource : MonoBehaviour
     private void Fire(Vector2 direction) {
 
         var isCritical = Random.Range(0, 100) < criticalChance;
-        var projectile = Instantiate(isCritical ? projectileCritPrefab : projectilePrefab, spawnPoint.position, spawnPoint.rotation);
+        var projectile = Instantiate(isCritical ? Bolt : Bolt, spawnPoint.position, spawnPoint.rotation);
+        var damageSource = projectile.GetComponent<DamageSource>();
         projectile.transform.right = direction;
-        projectile.GetComponent<DamageSource>().Source = gameObject;
-        projectile.GetComponent<DamageSource>().damage = player.Damage * (isCritical ? 2 : 1);
+        damageSource.Source = Player;
+        damageSource.damage = (int)(BaseDamage * DamageMultiplier);
+        if (isCritical) {
+            damageSource.damage *= 2; 
+            damageSource.Critical = true;
+        }
         projectile.GetComponent<Rigidbody2D>().velocity = direction.normalized * projectileSpeed;
         projectile.SetActive(true);
     }
 
+    public override void LevelUp() {
+        Level++;
+    }
 }

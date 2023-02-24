@@ -30,8 +30,6 @@ public class EnemySpawner : MonoBehaviour
         pos.x = start.x + Mathf.Sin(angle) * spawnDistance;
         pos.y = start.y + Mathf.Cos(angle) * spawnDistance;
 
-        Debug.Log($"Player position:{start.x} / {start.y} spawn position: {pos.x} / {pos.y}");
-
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, pos, Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));

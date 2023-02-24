@@ -101,9 +101,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd736806a5d61a4a910f3b3635d7790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10000
-  damage: 1
-  speed: 0
+  Speed: 0
+  Damage: 1
+  Health: 1000
+  power: 0
 --- !u!114 &5525473467715371170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,10 +117,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533ffe916a36fe64b8f977a7f080cbf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   spriteSlider: {fileID: 9132774458138420109}
   healthBar: {fileID: 9132774458138420115}
   slider: {fileID: 0}
+  sliderText: {fileID: 0}
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &5404805819626681266
 Rigidbody2D:
   serializedVersion: 4

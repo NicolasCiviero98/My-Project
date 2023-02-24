@@ -6,6 +6,8 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public float Speed;
+    public int Damage;
+    public int Health;
 
     void Start()
     {
