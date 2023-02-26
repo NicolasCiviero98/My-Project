@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class EnergyOrb : Skill
 {
-    public float BaseDamage = 8;
+    public static EnergyOrb Instance;
 
-    public GameObject Orb;
-    public GameObject Player;
-
-    private float[] _damageMultiplier = {0, 1, 1.2f, 1.4f, 1.6f, 1.8f, 2f, 2f};
-    private int[] _orbCount = {0, 1, 2, 3, 4, 5, 6, 8};
-    private List<GameObject> _orbs = new List<GameObject>();
+    [SerializeField] private  float BaseDamage = 8;
+    [SerializeField] private  GameObject Orb;
+    [SerializeField] private  GameObject Player;
 
     public float DamageMultiplier => _damageMultiplier[Level];
     public float OrbCount => _orbCount[Level];
 
+    private float[] _damageMultiplier = {0, 1, 1.2f, 1.4f, 1.6f, 1.8f, 2f, 2f};
+    private int[] _orbCount = {0, 1, 2, 3, 4, 5, 6, 8};
+
+    
+    private List<GameObject> _orbs = new List<GameObject>();
+
+    void Start() {
+        if (Instance == null) Instance = this;
+        else Destroy(Instance);
+        MaxLevel = _damageMultiplier.Length - 1;
+    }
+
     public override void LevelUp() {
-        Level++;
-        ClearOrbs();
-        CreateOrbs();
+        if (Level + 1 < MaxLevel) {
+            Level++;
+            ClearOrbs();
+            CreateOrbs();
+        }
     }
 
     private void ClearOrbs() {
@@ -34,7 +45,6 @@ public class EnergyOrb : Skill
             CreateOrb(i * angleOffset);
         }
     }
-
     private void CreateOrb(float angle) {
         var orb = Instantiate(Orb, Player.transform.position, Quaternion.identity);
         var damageSource = orb.GetComponent<DamageSource>();

@@ -328,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &507855053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,17 +517,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookAt: {fileID: 599535834}
   smoothTime: 0.25
---- !u!114 &599535830 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8126960064686545619, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
-  m_PrefabInstance: {fileID: 8126960065179642373}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3134a347b9003654db4fce489c2b4e4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &599535834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8126960064686545631, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
@@ -554,6 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 729182908}
   - component: {fileID: 729182907}
+  - component: {fileID: 729182909}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -592,6 +582,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &729182909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729182906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389a2d08d35f4f1449153384ce125fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &756066848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,13 +680,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 4
+  - eventID: 2
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 599535830}
-          m_TargetAssemblyTypeName: ProjectileSource, Assembly-CSharp
-          m_MethodName: OnPanelClicked
+        - m_Target: {fileID: 729182909}
+          m_TargetAssemblyTypeName: ActionInputController, Assembly-CSharp
+          m_MethodName: OnActionPanelPointerDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729182909}
+          m_TargetAssemblyTypeName: ActionInputController, Assembly-CSharp
+          m_MethodName: OnActionPanelPointerUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1106,11 +1124,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4164450414794370620, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4164450414794370620, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4164450415906589874, guid: 010d33bc9b6155542b685d4cbf6ad199, type: 3}
       propertyPath: m_Pivot.x
@@ -1339,11 +1357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8231147437191750959, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8231147437191750959, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0eba31bc40b3c141adf272db46b96cc, type: 3}
@@ -1372,11 +1390,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3919876889207042624, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3919876889207042624, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3919876890376933569, guid: 32c2acde329c5cc49aba14dd309830cd, type: 3}
       propertyPath: m_Name
@@ -8513,6 +8531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelUpPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8527357208394449167, guid: 67aeaea8a3377374e81292260de4761f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67aeaea8a3377374e81292260de4761f, type: 3}
 --- !u!224 &6051793110981093055 stripped
@@ -8614,7 +8636,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8126960064724511239, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
+      propertyPath: BaseCooldown
+      value: 0.7
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8126960064686545619, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d36efd6753129cc4db2581a26919c3fd, type: 3}
 --- !u!1001 &8754471372116516263
 PrefabInstance:

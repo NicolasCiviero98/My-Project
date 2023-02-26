@@ -1,4 +1,5 @@
 Site de sprites - https://www.kenney.nl/assets
+referencia de paletas - https://lospec.com/palette-list
 
 Rodar em android - https://www.youtube.com/watch?v=iCXwaehzRFQ
 Animação top-down - https://www.youtube.com/watch?v=P8GF_clL1Y0&embeds_euri=https%3A%2F%2Fwww.crieseusjogos.com.br%2F&feature=emb_imp_woyt

@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class LightiningBolt : Skill
 {
-    public float BaseDamage = 12;
+    public static LightiningBolt Instance;
 
-    public GameObject Bolt;
-    public GameObject Player;
-    public Transform spawnPoint;
+    [SerializeField] private float BaseDamage = 12;
+    [SerializeField] private float BaseCooldown = 5.0f;
+    [SerializeField] private float projectileSpeed = 15;
+    [SerializeField] private float criticalChance;
+    [SerializeField] private GameObject Bolt;
+    [SerializeField] private GameObject Player;
+    [SerializeField] private Transform spawnPoint;
 
     private float[] _damageMultiplier = {0, 1, 1.4f, 1.4f, 1.8f, 1.8f, 2f, 2.3f};
     private float[] _attackSpeedMultiplier = {0, 1, 1, 1.3f, 1.3f, 1.6f, 1.6f, 1.8f};
-
-    [SerializeField] private float projectileSpeed = 15;
-    [Range(1, 100)] [SerializeField] private float criticalChance;
     
     public float DamageMultiplier => _damageMultiplier[Level];
     public float AttackSpeedMultiplier => _attackSpeedMultiplier[Level];
+
+    private float _cooldown;
     
-
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            OnPanelClicked();
-        }
+    void Start() {
+        if (Instance == null) Instance = this;
+        else Destroy(Instance);
+        MaxLevel = _damageMultiplier.Length - 1;
     }
-
-    public void OnPanelClicked() {
-        var target = FindTarget();
-        var direction = Aim(target);
-        Fire(direction);
+    void Update() {
+        _cooldown -= Time.deltaTime;
+        if (_cooldown < 0 && ActionInputController.Instance.ActionInputActive()) {
+            var target = FindTarget();
+            var direction = Aim(target);
+            Fire(direction);
+            _cooldown = BaseCooldown / AttackSpeedMultiplier;
+        }
     }
 
     private GameObject FindTarget() {
@@ -69,7 +74,4 @@ public class LightiningBolt : Skill
         projectile.SetActive(true);
     }
 
-    public override void LevelUp() {
-        Level++;
-    }
 }
