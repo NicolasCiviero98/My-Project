@@ -6,7 +6,8 @@ using UnityEngine;
 public abstract class Skill : MonoBehaviour
 {
     public int Level;
-    public int MaxLevel;
+    public int MaxLevel { get; protected set; }
+    public SkillData Info;
     public virtual void LevelUp() {
         if (Level + 1 < MaxLevel) Level++;
     }

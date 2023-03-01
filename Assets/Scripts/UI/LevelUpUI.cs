@@ -7,7 +7,7 @@ using TMPro;
 public class LevelUpUI : MonoBehaviour
 {
     public int OptionsCount;
-    public List<GameObject> options;
+    public List<UpgradeOption> options;
     public List<Skill> upgrades;
     public int selectedIndex = -1;
 
@@ -15,7 +15,8 @@ public class LevelUpUI : MonoBehaviour
     void Start() {
         for (int i = 0; i < options.Count; i++) {
             var index = i;
-            options[i].GetComponent<Button>().onClick.AddListener(delegate{OptionPressedCallback(index);});
+            options[i].Unselect();
+            options[i].OnSelected.AddListener(delegate{OptionPressedCallback(index);});
         }
     }
 
@@ -38,10 +39,9 @@ public class LevelUpUI : MonoBehaviour
     }
 
     void OptionPressedCallback(int index) {
-        foreach (var option in options) {
-            option.GetComponent<Image>().color = new Color32(53,53,53,255);
+        for (int i = 0; i < options.Count; i++) {
+            if (i != index) options[i].Unselect();
         }
-        options[index].GetComponent<Image>().color = new Color32(142,142,142,255);
         selectedIndex = index;
     }
 
@@ -54,6 +54,10 @@ public class LevelUpUI : MonoBehaviour
         upgrades.Add(SkillBook.Instance.Skills[0]);
         upgrades.Add(SkillBook.Instance.Skills[1]);
         upgrades.Add(SkillBook.Instance.Skills[1]);
+        for (int i = 0; i < upgrades.Count; i++) {
+            options[i].Load(upgrades[i]);
+        }
+
 
     }
 }

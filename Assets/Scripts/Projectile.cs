@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider) {
         if (collider.GetComponent<Health>() == null) return;
+        if (gameObject.GetComponent<DamageSource>().Source == collider.gameObject) return;
         if (pierces <= 0) Destroy(gameObject);
         pierces--;
     }

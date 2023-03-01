@@ -15,7 +15,7 @@ public class LightiningBolt : Skill
     [SerializeField] private Transform spawnPoint;
 
     private float[] _damageMultiplier = {0, 1, 1.4f, 1.4f, 1.8f, 1.8f, 2f, 2.3f};
-    private float[] _attackSpeedMultiplier = {0, 1, 1, 1.3f, 1.3f, 1.6f, 1.6f, 1.8f};
+    private float[] _attackSpeedMultiplier = {1, 1, 1, 1.3f, 1.3f, 1.6f, 1.6f, 1.8f};
     
     public float DamageMultiplier => _damageMultiplier[Level];
     public float AttackSpeedMultiplier => _attackSpeedMultiplier[Level];

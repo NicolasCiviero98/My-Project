@@ -2,18 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
-public class SkillData : MonoBehaviour
+ [CreateAssetMenu(fileName ="data",menuName ="SkillData",order=1)]
+public class SkillData : ScriptableObject
 {
     public string Name;
     public string Description;
-    //public Image Thumbnail;
-    public UnityEvent OnSelected;
-    void Start() {
-        
-    }
-
-    void Update() {
-        
-    }
+    public Sprite Icon;
 }
