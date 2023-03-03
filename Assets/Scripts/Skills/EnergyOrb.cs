@@ -28,7 +28,7 @@ public class EnergyOrb : Skill
     public override void LevelUp() {
         if (Level + 1 < MaxLevel) {
             Level++;
-            ClearOrbs();
+            //ClearOrbs();
             CreateOrbs();
         }
     }
@@ -39,12 +39,19 @@ public class EnergyOrb : Skill
             _orbs.RemoveAt(0);
         }
     }
+    
     private void CreateOrbs() {
+        if (_orbs.Count == OrbCount) return;
+
+        float baseAngle = _orbs.Count == 0 ? 0 : _orbs[0].GetComponent<OrbitalMovement>().Angle;
         var angleOffset = 2 * Mathf.PI / OrbCount;
         for (int i = 0; i < OrbCount; i++) {
-            CreateOrb(i * angleOffset);
+            var angle = baseAngle + i * angleOffset;
+            if (i < _orbs.Count) UpgradeOrb(_orbs[i], angle);
+            else CreateOrb(angle);
         }
     }
+
     private void CreateOrb(float angle) {
         var orb = Instantiate(Orb, Player.transform.position, Quaternion.identity);
         var damageSource = orb.GetComponent<DamageSource>();
@@ -56,6 +63,13 @@ public class EnergyOrb : Skill
         _orbs.Add(orb);
 
         orb.SetActive(true);
+    }
+
+    private void UpgradeOrb(GameObject orb, float angle) {
+        var damageSource = orb.GetComponent<DamageSource>();
+        var movement = orb.GetComponent<OrbitalMovement>();
+        damageSource.damage = (int)(BaseDamage * DamageMultiplier);
+        movement.Angle = angle;
     }
 
 }

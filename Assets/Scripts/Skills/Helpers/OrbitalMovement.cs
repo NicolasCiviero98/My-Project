@@ -18,12 +18,15 @@ public class OrbitalMovement : MonoBehaviour
 
     void Update()
     {
+        var step = 0.08f;
         var start = Center.transform.position;
         Angle = (Angle + RotationalSpeed * Time.deltaTime) % (2f * Mathf.PI);
         var pos = new Vector3();
         pos.x = start.x + Mathf.Sin(Angle) * Distance;
         pos.y = start.y + Mathf.Cos(Angle) * Distance;
 
-        this.gameObject.transform.position = pos;
+        var currentPos = this.gameObject.transform.position;
+        var newPos = currentPos * (1-step) + pos * step;
+        this.gameObject.transform.position = newPos;
     }
 }

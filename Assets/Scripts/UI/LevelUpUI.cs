@@ -53,7 +53,7 @@ public class LevelUpUI : MonoBehaviour
         //}
         upgrades.Add(SkillBook.Instance.Skills[0]);
         upgrades.Add(SkillBook.Instance.Skills[1]);
-        upgrades.Add(SkillBook.Instance.Skills[1]);
+        upgrades.Add(SkillBook.Instance.Skills[2]);
         for (int i = 0; i < upgrades.Count; i++) {
             options[i].Load(upgrades[i]);
         }
