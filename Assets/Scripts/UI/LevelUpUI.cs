@@ -6,7 +6,6 @@ using TMPro;
 
 public class LevelUpUI : MonoBehaviour
 {
-    public int OptionsCount;
     public List<UpgradeOption> options;
     public List<Skill> upgrades;
     public int selectedIndex = -1;
@@ -47,17 +46,28 @@ public class LevelUpUI : MonoBehaviour
 
     private void RerollUpgrades() {
         selectedIndex = -1;
-        upgrades = new List<Skill>();
-        //for (int i = 0; i < OptionsCount; i++) {
-        //    upgrades.Add(SkillBook.Instance.Skills[0]);
-        //}
-        upgrades.Add(SkillBook.Instance.Skills[0]);
-        upgrades.Add(SkillBook.Instance.Skills[1]);
-        upgrades.Add(SkillBook.Instance.Skills[2]);
-        for (int i = 0; i < upgrades.Count; i++) {
+        upgrades = new List<Skill>(SkillBook.Instance.AvailableSkills());
+        Shuffle(upgrades);
+        
+        for (int i = 0; i < options.Count && i < upgrades.Count; i++) {
             options[i].Load(upgrades[i]);
         }
-
-
     }
+
+
+
+    public void Shuffle<T>(IList<T> list)  
+    {  
+        int n = list.Count;  
+        var rng = new System.Random();  
+
+        while (n > 1) {  
+            n--;  
+            int k = rng.Next(n + 1);  
+            T value = list[k];  
+            list[k] = list[n];  
+            list[n] = value;  
+        }  
+    }
+
 }

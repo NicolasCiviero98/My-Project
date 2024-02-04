@@ -38,6 +38,7 @@ public class UpgradeOption : MonoBehaviour
         Name.text = skill.Info.Name;
         Level.text = $"Level {skill.Level + 1}.";
         Icon.sprite = Skill.Info.Icon;
+        Unselect();
     }
 
 

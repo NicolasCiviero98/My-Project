@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Player : Entity
 {
+    public static Player Instance;
     public FloatingJoystick joystick;
 
     private Rigidbody2D body;
@@ -16,6 +17,9 @@ public class Player : Entity
         body = GetComponent<Rigidbody2D>();
         GetComponent<Health>().SetHealth(Health, Health);
         facing = new Vector3(1,0,0);
+        
+        if (Instance == null) Instance = this;
+        else Destroy(Instance);
     }
     
     void Update() {

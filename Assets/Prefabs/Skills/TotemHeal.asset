@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6ef4f350b05d2c44812ff69e82fb2ec, type: 3}
-  m_Name: FiringHead
+  m_Name: TotemHeal
   m_EditorClassIdentifier: 
-  Name: Firing Head
-  Description: A floating head who fires projectiles
-  Icon: {fileID: 21300000, guid: 4a8160b843399d844a80678c36c7db7b, type: 3}
+  Name: Healer Totem
+  Description: The totem sticks to the ground and heal the player if it's near
+  Icon: {fileID: 599024720, guid: a525e42d11e97a5458b9259202bb4849, type: 3}

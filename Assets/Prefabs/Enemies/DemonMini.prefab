@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2032e7eaf0866a145bc73db19b60da0f, type: 3}
+      objectReference: {fileID: 21300000, guid: 1cbd008d1e2147b4f85b41f6f3ff95c3, type: 3}
     - target: {fileID: 1023855138595344599, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -84,12 +84,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987920917237658230, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8559031240507836291, guid: f83d341f32ca08340bda6148189fb444, type: 3}
       propertyPath: m_Name
-      value: BaseEnemy
+      value: DemonMini
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f83d341f32ca08340bda6148189fb444, type: 3}

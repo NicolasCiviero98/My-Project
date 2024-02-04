@@ -6,9 +6,9 @@ public class FiringHead : Skill
 {
     public static FiringHead Instance;
 
-    [SerializeField] private  float BaseDamage = 8;
-    [SerializeField] private  GameObject Head;
-    [SerializeField] private  GameObject Player;
+    [SerializeField] private float BaseDamage = 8;
+    [SerializeField] private GameObject Head;
+    [SerializeField] private GameObject Player;
 
     public float DamageMultiplier => _damageMultiplier[Level];
     public float HeadCount => _headCount[Level];
@@ -28,7 +28,7 @@ public class FiringHead : Skill
     }
 
     public override void LevelUp() {
-        if (Level + 1 < MaxLevel) {
+        if (Level < MaxLevel) {
             Level++;
             CreateHeads();
         }

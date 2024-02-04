@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 8126960064724511237}
   - component: {fileID: 8126960064724511239}
   - component: {fileID: 1215293985}
+  - component: {fileID: 5962182575892483893}
   m_Layer: 0
   m_Name: SkillBook
   m_TagString: Untagged
@@ -331,6 +332,7 @@ MonoBehaviour:
   - {fileID: 8126960064724511237}
   - {fileID: 8126960064724511239}
   - {fileID: 1215293985}
+  - {fileID: 5962182575892483893}
 --- !u!114 &8126960064724511237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,11 +383,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef21cfe538dcfd4a9818972a7ad71f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 1
+  Level: 0
   Info: {fileID: 11400000, guid: 9e3e4cbaf32f6bd48b91771efd73bda3, type: 2}
   BaseDamage: 8
   Head: {fileID: 971054915238500516, guid: 67512487e92c4eb4f80aba0cf6b9fe43, type: 3}
   Player: {fileID: 8126960064105779559}
+--- !u!114 &5962182575892483893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126960064724522491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48998b450dea367469bb2f6f642fc94c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  Info: {fileID: 11400000, guid: 428eade6055cf1b41a8535cd724a77c7, type: 2}
+  BaseCooldown: 6
+  TotemPrefab: {fileID: 3702352358331278254, guid: ed07240d09c03b64ebba3de6ac990f86, type: 3}
 --- !u!1 &8126960065416594811
 GameObject:
   m_ObjectHideFlags: 0

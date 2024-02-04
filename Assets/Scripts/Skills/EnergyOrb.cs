@@ -6,9 +6,9 @@ public class EnergyOrb : Skill
 {
     public static EnergyOrb Instance;
 
-    [SerializeField] private  float BaseDamage = 8;
-    [SerializeField] private  GameObject Orb;
-    [SerializeField] private  GameObject Player;
+    [SerializeField] private float BaseDamage = 8;
+    [SerializeField] private GameObject Orb;
+    [SerializeField] private GameObject Player;
 
     public float DamageMultiplier => _damageMultiplier[Level];
     public float OrbCount => _orbCount[Level];
@@ -26,9 +26,8 @@ public class EnergyOrb : Skill
     }
 
     public override void LevelUp() {
-        if (Level + 1 < MaxLevel) {
+        if (Level < MaxLevel) {
             Level++;
-            //ClearOrbs();
             CreateOrbs();
         }
     }

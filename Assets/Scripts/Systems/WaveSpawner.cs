@@ -47,9 +47,9 @@ public class WaveSpawner : MonoBehaviour
     }
  
     private void GenerateEnemies() {
-        var waveValue = currWave * waveValueMultiplier;
+        var waveValue = currWave * waveValueMultiplier + 50;
         var generatedEnemies = new List<GameObject>();
-        int groupId = Random.Range(0, groups.Count);
+        int groupId = 1;Random.Range(0, groups.Count);
         var enemies = groups[groupId].enemies;
 
         while(waveValue > 0 && generatedEnemies.Count < 50) {
